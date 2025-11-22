@@ -3,13 +3,13 @@ import { createTask, deleteTask, getAllTasks, updateTask } from '../controllers/
 const router = express.Router();
 
 const initWebRoutes = (app: any) => {
-    router.get("/",getAllTasks)
+    router.get("/api/tasks",getAllTasks)
 
-    router.post("/api/task",createTask)
+    router.post("/api/tasks",createTask)
 
-    router.put("/api/task/:id",updateTask)
+    router.put("/api/tasks/:id",updateTask)
     
-    router.delete("/api/task/:id",deleteTask)
+    router.delete("/api/tasks/:id",deleteTask)
     
     return app.use("/",router)
 }
