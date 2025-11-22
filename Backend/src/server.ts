@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT;
 
 app.use(express.json());
-app.use(cors({ origin: ['http://localhost:300','https://300-firebase-webapp-1758292440344.cluster-y75up3teuvc62qmnwys4deqv6y.cloudworkstations.dev'] }));
+app.use(cors());
 
 configViewEngine(app);
 initWebRoutes(app);
