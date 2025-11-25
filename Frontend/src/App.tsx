@@ -1,27 +1,17 @@
-import { useEffect, useState } from "react"
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
 
 export default function App() {
-
-  const [taskBuffer, settaskBuffer] = useState([]);
-
-  useEffect(() => {
-    fetchTasks();
-  }, []);
-
-
-  const fetchTasks = async () => {
-    try {
-      const res = await fetch("http://localhost:8000/api/tasks/");
-      const data = await res.json();
-      settaskBuffer(data.tasks);
-      console.log(data.tasks);
-    } catch (error) {
-      console.error("Error fetching tasks:", error);
-    }
-  }
-
   return (
-    <>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+      </Routes>
+    </Router>
+  );
 }

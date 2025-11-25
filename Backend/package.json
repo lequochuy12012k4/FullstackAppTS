@@ -26,10 +26,16 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cookie-parser": "^1.4.10",
     "@types/cors": "^2.8.19",
     "@types/ejs": "^3.1.5",
+    "@types/jsonwebtoken": "^9.0.10",
+    "bcrypt": "^5.0.0",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "ejs": "^3.1.10",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.20.1"
   }
 }
